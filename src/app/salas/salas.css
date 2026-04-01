@@ -1,0 +1,33 @@
+
+.salas-container {
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+.form-card {
+  max-height: 350px; 
+  overflow-y: auto;  
+}
+
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+h2, h3 {
+  color: #341162;
+}
+.btn-success {
+  background-color: #341162;
+  border-color: #341162;
+}
+.btn-success:hover {
+  background-color: #5a33a3;
+  border-color: #5a33a3;
+}
+
+.badge {
+  font-size: 0.85rem;
+}
+.table-dark th {
+  background-color: #341162 ;
+}

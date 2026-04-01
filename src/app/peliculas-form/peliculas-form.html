@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="peliculas-container py-5">
+  <div class="container">
+    <div class="row g-4">
+      
+
+      <div class="col-lg-4">
+        <div class="card p-4 shadow-sm form-card">
+          <h2 class="mb-4 text-center">{{ isEdit ? 'Editar Película' : 'Nueva Película' }}</h2>
+
+          <form (ngSubmit)="guardarPelicula()" class="mb-4">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" [(ngModel)]="peliculaModel.nombre" name="nombre" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Duración (minutos)</label>
+              <input type="number" class="form-control" [(ngModel)]="peliculaModel.duracion" name="duracion" required>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+              <button type="submit" class="btn btn-success me-2">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+              <button type="button" class="btn btn-secondary" (click)="limpiar()">Limpiar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card p-3 shadow-sm h-100">
+          <h3 class="mb-3 text-center">Películas Registradas</h3>
+          <div class="table-responsive">
+            <table class="table table-striped align-middle mb-0">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Duración</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let peli of peliculas">
+                  <td>{{ peli.id_pelicula }}</td>
+                  <td>{{ peli.nombre }}</td>
+                  <td>{{ peli.duracion }} min</td>
+                  <td>
+                    <span class="badge" [ngClass]="peli.estado ? 'bg-success' : 'bg-danger'">
+                      {{ peli.estado ? 'Activo' : 'Inactivo' }}
+                    </span>
+                  </td>
+                  <td>
+                    <button class="btn btn-sm btn-primary me-1" (click)="editarPelicula(peli)" [disabled]="!peli.estado">Editar</button>
+                    <button class="btn btn-sm btn-danger" (click)="eliminarPelicula(peli)" [disabled]="!peli.estado">Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
