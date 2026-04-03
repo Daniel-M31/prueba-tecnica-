@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthService } from '../Services/auth-service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,17 +12,19 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-   username: string | null = null;
+ username: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
-    this.username = localStorage.getItem('username');
+    this.username = this.authService.getUsuario(); 
   }
 
   logout() {
-    localStorage.removeItem('username');
-    this.username = null;
+    this.authService.logout();
     this.router.navigate(['/login']);
   }
 }

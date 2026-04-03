@@ -1,0 +1,166 @@
+
+.asignaciones-container {
+  background: linear-gradient(135deg, #f4f2fb, #e9e6f7);
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+.card {
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(52, 17, 98, 0.12);
+}
+
+
+h2, h3 {
+  color: #341162;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6c4ccf;
+  box-shadow: 0 0 0 0.2rem rgba(108, 76, 207, 0.2);
+}
+
+
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #341162, #6c4ccf);
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #2a0e4d, #593bb3);
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  border: none;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #cfcfcf;
+}
+
+.btn-primary {
+  background-color: #4c6ef5;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3b5bdb;
+}
+
+.btn-danger {
+  background-color: #fa5252;
+  border: none;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #e03131;
+}
+
+
+.btn-sm {
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 100%;
+}
+
+
+.table-responsive {
+  max-height: 600px;
+  overflow-y: auto;
+  display: block; 
+  position: relative;
+}
+
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #341162, #4b1f8f);
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.table td {
+  padding: 14px 12px;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f3f0ff;
+}
+
+
+.badge {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+
+.acciones-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.acciones-btns .btn {
+  min-width: 75px;
+}
+
+
+.form-card {
+  max-height: 400px;
+  overflow-y: auto;
+}

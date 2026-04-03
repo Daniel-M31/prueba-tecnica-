@@ -1,0 +1,88 @@
+
+.login-container {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #243b55;
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #243b55;
+  box-shadow: 0 0 8px rgba(36,59,85,0.4);
+  transform: scale(1.02);
+}
+
+.form-control.ng-invalid.ng-touched {
+  border-color: #dc3545;
+  box-shadow: 0 0 5px rgba(220,53,69,0.3);
+}
+
+
+.login-btn {
+  background: linear-gradient(135deg, #243b55, #141e30);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.login-btn:active {
+  transform: scale(0.97);
+}
+
+
+.login-btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.error-box {
+  background: #ffe5e5;
+  color: #b30000;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}

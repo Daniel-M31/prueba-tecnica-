@@ -1,0 +1,142 @@
+<app-navbar></app-navbar>
+
+<div class="asignaciones-container py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Formulario de nueva asignación / edición -->
+      <div class="col-lg-4">
+        <div class="card p-4 shadow-sm mx-auto" style="max-width: 500px;">
+          <h2 class="mb-4 text-center fw-bold">
+            {{ isEdit ? 'Editar Asignación' : 'Nueva Asignación' }}
+          </h2>
+
+          <form (ngSubmit)="guardarAsignacion()" class="mb-4">
+
+            <div class="mb-3">
+              <label class="form-label">Película</label>
+              <select class="form-select"
+                      [(ngModel)]="asignacionModel.id_pelicula"
+                      name="id_pelicula"
+                      required>
+                <option value="" disabled>Seleccione una película</option>
+                <option *ngFor="let peli of peliculas"
+                        [value]="peli.id_pelicula">
+                  {{ peli.nombre }}
+                </option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Sala de Cine</label>
+              <select class="form-select"
+                      [(ngModel)]="asignacionModel.id_sala"
+                      name="id_sala"
+                      required>
+                <option value="" disabled>Seleccione una sala</option>
+                <option *ngFor="let sala of salas"
+                        [value]="sala.id_sala">
+                  {{ sala.nombre }}
+                </option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Fecha Publicación</label>
+              <input type="date"
+                     class="form-control"
+                     [(ngModel)]="asignacionModel.fecha_publicacion"
+                     name="fecha_publicacion"
+                     required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Fecha Fin</label>
+              <input type="date"
+                     class="form-control"
+                     [(ngModel)]="asignacionModel.fecha_fin"
+                     name="fecha_fin"
+                     required>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+              <button type="submit" class="btn btn-success me-2">
+                {{ isEdit ? 'Actualizar' : 'Guardar' }}
+              </button>
+
+              <button type="button"
+                      class="btn btn-secondary"
+                      (click)="limpiar()">
+                Limpiar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- Tabla de asignaciones existentes -->
+      <div class="col-lg-8">
+        <div class="card p-3 shadow-sm h-100">
+          <h3 class="mb-3 text-center fw-semibold">
+            Asignaciones Existentes
+          </h3>
+
+          <div class="table-responsive">
+            <table class="table table-striped align-middle mb-0">
+
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Película</th>
+                  <th>Sala</th>
+                  <th>Fecha Publicación</th>
+                  <th>Fecha Fin</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let asig of asignaciones">
+                  <td>{{ asig.id_pelicula_sala }}</td>
+                  <td>{{ getNombrePelicula(asig.id_pelicula) }}</td>
+                  <td>{{ getNombreSala(asig.id_sala) }}</td>
+                  <td>{{ asig.fecha_publicacion }}</td>
+                  <td>{{ asig.fecha_fin }}</td>
+
+                  <td>
+                    <span class="badge"
+                          [ngClass]="asig.estado ? 'bg-success' : 'bg-danger'">
+                      {{ asig.estado ? 'Activo' : 'Inactivo' }}
+                    </span>
+                  </td>
+
+                  <td>
+                    <div class="acciones-btns">
+                      <button class="btn btn-sm btn-primary"
+                              (click)="editarAsignacion(asig)"
+                              [disabled]="!asig.estado">
+                        Editar
+                      </button>
+
+                      <button class="btn btn-sm btn-danger"
+                              (click)="eliminarAsignacion(asig)"
+                              [disabled]="!asig.estado">
+                        Eliminar
+                      </button>
+                    </div>
+                  </td>
+
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

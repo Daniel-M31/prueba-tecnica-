@@ -1,12 +1,12 @@
-import { PeliculaSalaForm } from './pelicula-sala-form/pelicula-sala-form';
-
 import { Routes } from '@angular/router';
+import { Login } from './components/auth/login/login';
+import { Dashboard } from './components/dashboard/dashboard';
+import { Salas } from './components/salas/salas';
+import { PeliculasForm } from './components/peliculas-form/peliculas-form';
+import { PeliculaSalaForm } from './components/pelicula-sala-form/pelicula-sala-form';
 
-import { Dashboard } from './dashboard/dashboard';
-import { PeliculasForm } from './peliculas-form/peliculas-form';
 
-import { Login } from './login/login';
-import { Salas } from './salas/salas';
+
 
 
 export const routes: Routes = [

@@ -1,25 +1,25 @@
-<nav class="navbar px-3">
+<nav class="navbar px-4">
 
-  <!-- Menú centrado -->
-  <ul class="navbar-nav flex-row mx-auto gap-3">
-        <li class="nav-item">
+  <div class="logo">🎬 CineApp</div>
+
+  <ul class="menu">
+    <li>
       <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/gestionSalas" routerLinkActive="active">Gestion de Salas</a>
+    <li>
+      <a class="nav-link" routerLink="/gestionSalas" routerLinkActive="active">Salas</a>
     </li>
-
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/salas" routerLinkActive="active">Gestión de Películas</a>
+    <li>
+      <a class="nav-link" routerLink="/salas" routerLinkActive="active">Películas</a>
     </li>
-    <li class="nav-item">
+    <li>
       <a class="nav-link" routerLink="/cartelera" routerLinkActive="active">Cartelera</a>
     </li>
   </ul>
 
-  <div class="d-flex align-items-center ms-auto" *ngIf="username">
-    <span class="me-2">Hola, {{ username }}</span>
-    <button class="btn btn-outline-danger btn-sm" (click)="logout()">
+  <div class="user-section" *ngIf="username">
+    <span class="me-3">👋 {{ username }}</span>
+    <button class="btn btn-danger btn-sm logout-btn" (click)="logout()">
       Salir
     </button>
   </div>

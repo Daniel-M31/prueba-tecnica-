@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+  <h2 class="mb-5 text-center display-5 fw-bold">🎬 Dashboard del Cine</h2>
+
+  <div class="row g-4">
+
+    <!-- Tarjeta 1: Total de Salas -->
+    <div class="col-md-4">
+      <div class="card cinema-card bg-primary text-white h-100 shadow" tabindex="0">
+        <div class="card-body text-center p-4 d-flex flex-column">
+          <h5 class="card-title mb-4 fw-semibold">Total de Salas</h5>
+          
+          <div class="image-container mx-auto mb-4">
+            <img src="https://www.panoramaaudiovisual.com/wp-content/uploads/2011/09/Panasonic_Cinemacity_02-web.jpg" 
+                 alt="Sala de Cine" 
+                 class="card-img">
+          </div>
+
+          <p class="display-3 fw-bold mb-0 mt-auto">{{ totalSalas }}</p>
+          <small class="opacity-75">Salas en total</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2: Salas Disponibles -->
+    <div class="col-md-4">
+      <div class="card cinema-card bg-success text-white h-100 shadow" tabindex="0">
+        <div class="card-body text-center p-4 d-flex flex-column">
+          <h5 class="card-title mb-4 fw-semibold">Salas Disponibles</h5>
+          
+          <div class="image-container mx-auto mb-4">
+            <img src="https://img.freepik.com/foto-gratis/vista-sala-cine-3d_23-2150866045.jpg" 
+                 alt="Sala de Cine Disponible" 
+                 class="card-img">
+          </div>
+
+          <p class="display-3 fw-bold mb-0 mt-auto">{{ salasDisponibles }}</p>
+          <small class="opacity-75">Listas para usar</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3: Total de Películas -->
+    <div class="col-md-4">
+      <div class="card cinema-card bg-warning text-dark h-100 shadow" tabindex="0">
+        <div class="card-body text-center p-4 d-flex flex-column">
+          <h5 class="card-title mb-4 fw-semibold">Total de Películas</h5>
+          
+          <div class="image-container mx-auto mb-4">
+            <img src="https://es.web.img3.acsta.net/newsv7/17/03/30/12/37/5706930.jpg" 
+                 alt="Películas" 
+                 class="card-img">
+          </div>
+
+          <p class="display-3 fw-bold mb-0 mt-auto">{{ totalPeliculas }}</p>
+          <small class="opacity-75">En cartelera</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

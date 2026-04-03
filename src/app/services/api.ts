@@ -59,6 +59,7 @@ export class Api {
 
   // servicios cartelera
   getCartelera(): Observable<any> {
+    console.log()
     return this.http.get(this.carteleracineUrl);
   }
 
